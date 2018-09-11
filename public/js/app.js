@@ -11953,6 +11953,11 @@ window.Vue = __webpack_require__(9);
 
 __WEBPACK_IMPORTED_MODULE_0_buefy___default.a.use(Buefy);
 
+var app = new __WEBPACK_IMPORTED_MODULE_0_buefy___default.a({
+    el: '#app',
+    data: {}
+});
+
 /***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
