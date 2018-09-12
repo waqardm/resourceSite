@@ -21,37 +21,37 @@
 </head>
 <body>
     <div id="app">
-        <nav class="nav has-shadow">
+        <div class="navbar-start has-shadow">
             <div class="container">
-                <div class="nav-left">
-                    <a class="nav-item" href="{{ route('home') }}">
-                        <img src="#" alt="Logo"/>
-                    </a>
-                    <a href="#" class="nav-item is-tab is-hidden-mobile m-l-10">Learn</a>
-                    <a href="#" class="nav-item is-tab is-hidden-mobile">Discuss</a>
-                    <a href="#" class="nav-item is-tab is-hidden-mobile">Share</a>
+                <div class="navbar-brand">
+                        <a class="navbar-item" href="{{ route('home') }}">
+                            <img src="https://bulma.io/images/bulma-logo.png" width="224" height="56" alt="Bulma"/>
+                        </a>
+                        <a href="#" class="navbar-item is-tab is-hidden-mobile">Learn</a>
+                        <a href="#" class="navbar-item is-tab is-hidden-mobile">Discuss</a>
+                        <a href="#" class="navbar-item is-tab is-hidden-mobile">Share</a>
+                    </div>
+                </div>
+                <div class="navbar-end">
+                    @if (!Auth::guest())
+                        <a href="" class="navbar-item is-tab">Login</a>
+                        <a href="" class="navbar-item is-tab">Join the Community</a>
+                    @else
+                        <button id ='button' class="button dropdown navbar-item is-tab is-aligned-right">
+                            Hey Waqar &nbsp;<span class="icon"><i class="fa fa-caret-down"></i></span>
+
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><span class="icon"><i class="fa fa-fw fa-user m-r-10"></i> </span> Profile</a></li>
+                                <li><a href="#"><span class="icon"><i class="fa fa-fw fa-bell m-r-10"></i> </span> Notifications</a></li>
+                                <li><a href="#"><span class="icon"><i class="fa fa-fw fa-cog m-r-10"></i> </span> Settings</a></li>
+                                <li class="seperator"></li>
+                                <li><a href="#"><span class="icon"><i class="fa fa-fw fa-sign-out m-r-10"></i> </span> Logout</a></li>
+                            </ul>
+                        </button>
+                    @endif
                 </div>
             </div>
-            
-            <div class="nav-right">
-                @if (Auth::guest())
-                    <a href="" class="nav-item is-tab">Login</a>
-                    <a href="" class="nav-item is-tab">Join the Community</a>
-                @else
-                    <button class="dropdown nav-item is-tab">
-                        Hey Alex <span class="icon"><i class="fa fa-caret-down"></i></span>
-
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class=""></a>Profile</li>
-                            <li><a href="#" class=""></a>Notifications</li>
-                            <li><a href="#" class=""></a>Settings</li>
-                            <li><a href="#" class="seperator"></a></li>
-                            <li><a href="#" class=""></a>Logout</li>
-                        </ul>
-                    </button>
-                @endif
-            </div>
-        </nav>
+        </div>
         @yield('content')
     </div>
 </body>

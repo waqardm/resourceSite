@@ -11951,11 +11951,17 @@ window.Vue = __webpack_require__(9);
 
 
 
-__WEBPACK_IMPORTED_MODULE_0_buefy___default.a.use(Buefy);
+Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a);
 
-var app = new __WEBPACK_IMPORTED_MODULE_0_buefy___default.a({
+var app = new Vue({
     el: '#app',
     data: {}
+});
+
+$(document).ready(function () {
+    $('.button').hover(function (e) {
+        $(this).toggleClass('is-open');
+    });
 });
 
 /***/ }),
