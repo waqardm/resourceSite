@@ -1,6 +1,24 @@
+/* ========================================
+   =========== Text Override ==========
+   ======================================== */
+
+.is-muted {
+    color: $grey-light;
+}
+
+a.is-muted:hover {
+    color: $grey !important;
+}
+
+
+/* ========================================
+   =========== Dropdown Override ==========
+   ======================================== */
+
 .navbar-start {
     height: 4.5rem;
     box-shadow: 0 2px 3px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1);
+    background-color: white;
 }
 
 .navbar-item img {

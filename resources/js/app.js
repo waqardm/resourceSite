@@ -1,15 +1,15 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
-
+import vue from 'vue';
 import Buefy from 'buefy';
+window.Vue = require('vue');
 
 Vue.use(Buefy);
 
-var app = new Vue({
-    el: '#app',
-    data: {}
+var App = new Vue({
+    el: '#app', 
+    el: '#login',
 });
 
 

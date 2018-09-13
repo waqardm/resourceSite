@@ -14,6 +14,9 @@
 // Bulma Vue Modules
 @import 'node_modules/buefy/src/scss/buefy';
 
+// Bulma Variables
+@import 'node_modules/bulma/sass/utilities/initial-variables';
+
 // Custom SASS Pages
 @import 'overrides';
 @import 'helpers';
