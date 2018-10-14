@@ -45,7 +45,7 @@
                                     <input class="input {{ $errors->has('password_confirmation') ? 'is-danger' : '' }}" type="password" name="password" id="password" required>
                                 </p>
                                 @if ($errors->has('password'))
-                                    <p class="help is-danger">{{ $errors->first('password') }}</p>
+                                    <p class="help is-success">{{ $errors->first('password') }}</p>
                                 @endif
                             </div>
                         </div>

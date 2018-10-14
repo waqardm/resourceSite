@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Lawyers Code Resource Site</title>
+    <title>Lawyers Code | Management</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -24,6 +24,8 @@
 <body>
 
     @include('_includes.nav.main')
+
+    @include('_includes.nav.manage')
 
     <div id="app">
         @yield('content')
