@@ -11954,11 +11954,13 @@ __webpack_require__(12);
 
 window.Vue = __webpack_require__(3);
 
-Vue.use(__WEBPACK_IMPORTED_MODULE_1_buefy___default.a);
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_buefy___default.a);
 
-var App = new Vue(_defineProperty({
+var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(_defineProperty({
     el: '#app'
-}, 'el', '#login'));
+}, 'el', '#manage'));
+
+// Manage profile drop down function
 
 $(document).ready(function () {
     $('.button').hover(function (e) {

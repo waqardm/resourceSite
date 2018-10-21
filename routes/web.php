@@ -16,11 +16,13 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get('logout','auth\LoginController@logout');
+Route::get('logout','Auth\LoginController@logout');
 
 Route::prefix('manage')->middleware('role:superadministrator|administrator|editor|author|contributor')->group(function(){
     Route::get('/', 'ManageController@index');
     Route::get('/dashboard', 'ManageController@dashboard')->name('manage.dashboard');
+    //crud for 'users'
+    Route::resource('/users', 'UserController');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

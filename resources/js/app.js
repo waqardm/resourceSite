@@ -1,17 +1,21 @@
 
 require('./bootstrap');
 
-import vue from 'vue';
+import Vue from 'vue';
 import Buefy from 'buefy';
 window.Vue = require('vue');
 
 Vue.use(Buefy);
 
-var App = new Vue({
-    el: '#app', 
-    el: '#login',
+
+
+const app = new Vue({
+    el: '#app',
+    el: '#manage'
 });
 
+
+// Manage profile drop down function
 
 $(document).ready(function() {
     $('.button').hover(function(e) {

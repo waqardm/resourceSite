@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -28,7 +28,9 @@
     @include('_includes.nav.manage')
 
     <div id="app">
-        @yield('content')
+        <div class="management-area">
+            @yield('content')
+        </div>
     </div>
 
     <!-- Scripts -->
