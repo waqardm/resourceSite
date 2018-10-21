@@ -18109,7 +18109,7 @@ button.navbar-item.is-active {
   position: absolute;
   font: 18px/1 'Open Sans', sans-serif;
   left: 6px;
-  top: 2px;
+  top: 1px;
   content: '\2143';
   -webkit-transform: rotate(40deg);
           transform: rotate(40deg);
