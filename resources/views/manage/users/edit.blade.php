@@ -30,9 +30,9 @@
                 </div>
                 <div class="block">
                     <label for="password" class="label">Password</label>
-                        <input type="radio" checked="checked" onclick="javascript:passwordOptions();" id="keep" name="password_options"> Do Not Change Password
-                        <input type="radio" onclick="javascript:passwordOptions();" id="change" name="password_options"> Manually Set New Password</b-radio>
-                        <p class="control m-t-10 content">
+                        <input type="radio" class="form-radio" checked="checked" onclick="javascript:passwordOptions();" id="keep" name="password_options"> Do Not Change Password
+                        <input type="radio" class="form-radio" onclick="javascript:passwordOptions();" id="change" name="password_options"> Manually Set New Password</b-radio>
+                        <p class="control m-t-20 content">
                             <input style="display:none" type="text" class="input" name="password" id="ifChange" placeholder="New Password">
                         </p>
                 </div>

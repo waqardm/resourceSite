@@ -18083,3 +18083,49 @@ button.navbar-item.is-active {
   margin: 10px 25px;
 }
 
+/* ========================================
+   =========== Radio Buttons ==============
+   ======================================== */
+
+.form-radio {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  background-color: #f1f1f1;
+  color: #663399;
+  top: 10px;
+  height: 30px;
+  width: 30px;
+  border: 3px solid #663399;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-right: 7px;
+  outline: none;
+}
+
+.form-radio:checked::before {
+  position: absolute;
+  font: 18px/1 'Open Sans', sans-serif;
+  left: 6px;
+  top: 2px;
+  content: '\2143';
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+
+.form-radio:hover {
+  background-color: white;
+}
+
+.form-radio:checked {
+  background-color: white;
+}
+
+label {
+  font: 300 16px/1.7 'Open Sans', sans-serif;
+  color: #666;
+  cursor: pointer;
+}
+
