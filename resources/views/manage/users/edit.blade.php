@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="flex-container" id="manage">
+<div class="flex-container">
     <div class="columns m-t-10">
         <div class="column">
             <h1 class="title">Edit User</h1>
@@ -13,9 +13,9 @@
 
     <div class="columns is-centered">
         <div class="column is-three-quarters">
+            <form action="{{ route('users.update', $user->id) }}" method="POST">
             {{ method_field('PUT') }}
             {{ csrf_field() }}
-            <form action="{{ route('users.update', $user->id) }}" method="POST">
                 <div class="field">
                     <label for="name" class="label">Name</label>
                     <p class="control">
@@ -30,8 +30,8 @@
                 </div>
                 <div class="block">
                     <label for="password" class="label">Password</label>
-                        <input type="radio" class="form-radio" checked="checked" onclick="javascript:passwordOptions();" id="keep" name="password_options"> Do Not Change Password
-                        <input type="radio" class="form-radio m-l-10" onclick="javascript:passwordOptions();" id="change" name="password_options"> Manually Set New Password</b-radio>
+                        <input type="radio" class="form-radio" checked="checked" onclick="javascript:passwordOptions();" id="keep" name="password_options"> Keep Current Password
+                        <input type="radio" class="form-radio m-l-10" onclick="javascript:passwordOptions();" id="change" name="password_options" value="change"> Set New Password</b-radio>
                         <p class="control m-t-20 content">
                             <input style="display:none" type="text" class="input" name="password" id="ifChange" placeholder="New Password">
                         </p>
