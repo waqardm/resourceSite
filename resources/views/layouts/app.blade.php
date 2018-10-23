@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+   
     
 
     <!-- Fonts -->
@@ -23,14 +23,14 @@
     @yield('styles')
 </head>
 <body>
-
-    @include('_includes.nav.main')
-
     <div id="app">
+        @include('_includes.nav.main')
         @yield('content')
     </div>
 
     <!-- Scripts -->
     @yield('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+
 </body>
 </html>

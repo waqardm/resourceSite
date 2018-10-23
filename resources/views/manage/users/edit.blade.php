@@ -31,7 +31,7 @@
                 <div class="block">
                     <label for="password" class="label">Password</label>
                         <input type="radio" class="form-radio" checked="checked" onclick="javascript:passwordOptions();" id="keep" name="password_options"> Keep Current Password
-                        <input type="radio" class="form-radio m-l-10" onclick="javascript:passwordOptions();" id="change" name="password_options" value="change"> Set New Password</b-radio>
+                        <input type="radio" class="form-radio m-l-10" onclick="javascript:passwordOptions();" id="change" name="password_options" value="change"> Set New Password
                         <p class="control m-t-20 content">
                             <input style="display:none" type="text" class="input" name="password" id="ifChange" placeholder="New Password">
                         </p>
@@ -46,11 +46,15 @@
 
 @section('scripts')
 <script>
-    function passwordOptions() {
-    if (document.getElementById('change').checked) {
-        document.getElementById('ifChange').style.display = 'block';
+    
+function passwordOptions() {
+    let change = document.getElementById('change');
+    let ifChange = document.getElementById('ifChange');
+
+    if (change.checked) {
+        ifChange.style.display = 'block';
         } else {
-        document.getElementById('ifChange').style.display = 'none';
+        ifChange.style.display = 'none';
     }
 }
 

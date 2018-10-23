@@ -18087,7 +18087,8 @@ button.navbar-item.is-active {
    =========== Radio Buttons ==============
    ======================================== */
 
-.form-radio {
+.form-radio,
+.form-checkbox {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -18099,13 +18100,21 @@ button.navbar-item.is-active {
   height: 30px;
   width: 30px;
   border: 3px solid #663399;
-  border-radius: 50px;
   cursor: pointer;
   margin-right: 7px;
   outline: none;
 }
 
-.form-radio:checked::before {
+.form-radio {
+  border-radius: 50px;
+}
+
+.form-checkbox {
+  border-radius: 5px;
+}
+
+.form-radio:checked::before,
+.form-checkbox:checked::before {
   position: absolute;
   font: 18px/1 'Open Sans', sans-serif;
   left: 6px;
@@ -18115,11 +18124,13 @@ button.navbar-item.is-active {
           transform: rotate(40deg);
 }
 
-.form-radio:hover {
+.form-radio:hover,
+.form-checkbox:hover {
   background-color: white;
 }
 
-.form-radio:checked {
+.form-radio:checked,
+.form-checkbox:checked {
   background-color: white;
 }
 
