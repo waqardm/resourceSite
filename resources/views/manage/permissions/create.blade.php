@@ -97,6 +97,7 @@ window.onload = keyUp();
 
 function keyUp(){
   let resource = document.getElementById('resource').value;
+  
   let table = document.getElementById('table');
   let crud = document.querySelectorAll('input[name=crud]:checked');
     if (resource.length >= 3 && crud.length > 0 ){
@@ -109,22 +110,22 @@ function keyUp(){
                         "</thead>" + 
                         "<tbody >" + 
                         "<tr>" +
-                            "<td>" + 'Create '+ resource + "</td>" +
+                            "<td>" + 'Create '+ resource.charAt(0).toUpperCase() + resource.substr(1) + "</td>" +
                             "<td>" + 'create-'+ resource + "</td>" +
                             "<td>" + 'Allows a user to create a '+ resource + ".</td>" +
                         "</tr>" +
                         "<tr>" +
-                            "<td>" + 'Read '+ resource + "</td>" +
+                            "<td>" + 'Read '+ resource.charAt(0).toUpperCase() + resource.substr(1) + "</td>" +
                             "<td>" + 'read-'+ resource + "</td>" +
                             "<td>" + 'Allows a user to read a '+ resource + ".</td>" +
                         "</tr>" +
                         "<tr>" +
-                            "<td>" + 'Update '+ resource + "</td>" +
+                            "<td>" + 'Update '+ resource.charAt(0).toUpperCase() + resource.substr(1) + "</td>" +
                             "<td>" + 'update-'+ resource + "</td>" +
                             "<td>" + 'Allows a user to update a '+ resource + ".</td>" +
                         "</tr>" +
                         "<tr>" +
-                            "<td>" + 'Delete '+ resource + "</td>" +
+                            "<td>" + 'Delete '+ resource.charAt(0).toUpperCase() + resource.substr(1) + "</td>" +
                             "<td>" + 'create-'+ resource + "</td>" +
                             "<td>" + 'Allows a user to delete a '+ resource + ".</td>" +
                         "</tr>" +
