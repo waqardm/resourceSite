@@ -47,8 +47,7 @@
                 <div class="column">
                     <label for="name" class="label">Resource</label>
                     <p class="control">
-                    {{ $resource = ''}}
-                        <input type="text" class="input" name="resource" id="resource" value = "{{ $resource }}" placeholder="Name of resource">
+                        <input type="text" class="input" name="resource" id="resource" value="" placeholder="Name of resource" oninput="keyUp()">
                     </p>
                 </div>
                 <div class="column is-three-quarters">
@@ -57,21 +56,7 @@
                     <input type="checkbox" class="form-checkbox m-l-15" id="update" name="crud" checked="checked"> Update
                     <input type="checkbox" class="form-checkbox m-l-15" id="delete" name="crud" checked="checked"> Delete
                 </div>
-                <div class="column" v-bind:title="message">
-                    <table class="table is-bordered m-t-20">
-                        <thead>
-                            <th>Name</th>
-                            <th>Slug</th>
-                            <th>Description</th>
-                        </thead>
-                        <tbody @if (strlen($resource > 3) &&  )@endif>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        </tbody>
-                    </table>
+                <div class="column" id="table">
                 </div>
                 
                 <button class="button is-success is-centered m-t-20">Create Permission</button>
@@ -86,7 +71,13 @@
 
 <script>
 
-function permissionChoice() {
+
+
+
+
+
+// show/hide permission type
+function permissionChoice(){
     let basic = document.getElementById('basicPermission');
     let crud = document.getElementById('crud');
     let crudPermission = document.getElementById('crudPermission');
@@ -99,7 +90,50 @@ function permissionChoice() {
         crudPermission.style.display = 'none';
         basic.style.display = 'block';
     }
-}
+};
+
+
+window.onload = keyUp(); 
+
+function keyUp(){
+  let resource = document.getElementById('resource').value;
+  let table = document.getElementById('table');
+  let crud = document.querySelectorAll('input[name=crud]:checked');
+    if (resource.length >= 3 && crud.length > 0 ){
+      table.style.display = "block";
+      table.innerHTML = "<table class=\"table is-bordered m-t-20\">" +
+                        "<thead>" + 
+                            "<th>Name</th>" + 
+                            "<th>Slug</th> " +
+                            "<th>Description</th>" +
+                        "</thead>" + 
+                        "<tbody >" + 
+                        "<tr>" +
+                            "<td>" + 'Create '+ resource + "</td>" +
+                            "<td>" + 'create-'+ resource + "</td>" +
+                            "<td>" + 'Allows a user to create a '+ resource + ".</td>" +
+                        "</tr>" +
+                        "<tr>" +
+                            "<td>" + 'Read '+ resource + "</td>" +
+                            "<td>" + 'read-'+ resource + "</td>" +
+                            "<td>" + 'Allows a user to read a '+ resource + ".</td>" +
+                        "</tr>" +
+                        "<tr>" +
+                            "<td>" + 'Update '+ resource + "</td>" +
+                            "<td>" + 'update-'+ resource + "</td>" +
+                            "<td>" + 'Allows a user to update a '+ resource + ".</td>" +
+                        "</tr>" +
+                        "<tr>" +
+                            "<td>" + 'Delete '+ resource + "</td>" +
+                            "<td>" + 'create-'+ resource + "</td>" +
+                            "<td>" + 'Allows a user to delete a '+ resource + ".</td>" +
+                        "</tr>" +
+                        "</tbody>" + 
+                    "</table>" 
+    } else {
+      table.style.display = "none";
+    }
+};
 
 </script>
 
