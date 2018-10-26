@@ -23,7 +23,7 @@ Route::prefix('manage')->middleware('role:superadministrator|administrator|edito
     Route::get('/dashboard', 'ManageController@dashboard')->name('manage.dashboard');
     //crud for 'users'
     Route::resource('/users', 'UserController');
-    Route::resource('/permissions', 'PermissionController');
+    Route::resource('/permissions', 'PermissionController', ['except' => 'destroy']);
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

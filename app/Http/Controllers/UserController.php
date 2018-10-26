@@ -38,6 +38,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        
         $this->validate($request, [
             'name' => 'required|max:255',
             'email' => 'required|email|unique:users',
@@ -54,7 +55,7 @@ class UserController extends Controller
         if ($user->save()) {
             return redirect()->route('users.show', $user->id);
         } else {
-            Session::flash('danger', 'An error has occured');
+            Session::flash('error', 'An error has occured');
             return redirect()->route('users.create');
         }
 

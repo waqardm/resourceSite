@@ -42,7 +42,7 @@
     </div>
     <div class="columns" id="crudPermission" style="display:none;">
         <div class="column">
-            <form action="{{ route('users.store') }}" method="POST">
+            <form action="{{ route('permissions.store') }}" method="POST">
                 {{ csrf_field() }}
                 <div class="column">
                     <label for="name" class="label">Resource</label>
